@@ -1,0 +1,10 @@
+D:\Program Files\projekty java i c#\Kolko_i_krzyzyk\Kolko_i_krzyzyk\bin\Debug\Kolko_i_krzyzyk.exe.config
+D:\Program Files\projekty java i c#\Kolko_i_krzyzyk\Kolko_i_krzyzyk\bin\Debug\Kolko_i_krzyzyk.exe
+D:\Program Files\projekty java i c#\Kolko_i_krzyzyk\Kolko_i_krzyzyk\bin\Debug\Kolko_i_krzyzyk.pdb
+D:\Program Files\projekty java i c#\Kolko_i_krzyzyk\Kolko_i_krzyzyk\obj\Debug\Kolko_i_krzyzyk.csprojAssemblyReference.cache
+D:\Program Files\projekty java i c#\Kolko_i_krzyzyk\Kolko_i_krzyzyk\obj\Debug\Kolko_i_krzyzyk.Properties.Resources.resources
+D:\Program Files\projekty java i c#\Kolko_i_krzyzyk\Kolko_i_krzyzyk\obj\Debug\Kolko_i_krzyzyk.csproj.GenerateResource.cache
+D:\Program Files\projekty java i c#\Kolko_i_krzyzyk\Kolko_i_krzyzyk\obj\Debug\Kolko_i_krzyzyk.csproj.CoreCompileInputs.cache
+D:\Program Files\projekty java i c#\Kolko_i_krzyzyk\Kolko_i_krzyzyk\obj\Debug\Kolko_i_krzyzyk.exe
+D:\Program Files\projekty java i c#\Kolko_i_krzyzyk\Kolko_i_krzyzyk\obj\Debug\Kolko_i_krzyzyk.pdb
+D:\Program Files\projekty java i c#\Kolko_i_krzyzyk\Kolko_i_krzyzyk\obj\Debug\Kolko_i_krzyzyk.Form1.resources
