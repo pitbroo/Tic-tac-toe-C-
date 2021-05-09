@@ -40,7 +40,12 @@
             this.button1 = new System.Windows.Forms.Button();
             this.PlayerTurn = new System.Windows.Forms.Label();
             this.newGameBtn = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.Score = new System.Windows.Forms.Label();
+            this.scorePlayer1 = new System.Windows.Forms.Label();
+            this.scorePlayer2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -202,9 +207,9 @@
             this.PlayerTurn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(62)))), ((int)(((byte)(47)))));
             this.PlayerTurn.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.PlayerTurn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.PlayerTurn.Location = new System.Drawing.Point(400, 87);
+            this.PlayerTurn.Location = new System.Drawing.Point(406, 125);
             this.PlayerTurn.Name = "PlayerTurn";
-            this.PlayerTurn.Size = new System.Drawing.Size(235, 48);
+            this.PlayerTurn.Size = new System.Drawing.Size(188, 38);
             this.PlayerTurn.TabIndex = 1;
             this.PlayerTurn.Text = "Kolej gracza 1";
             // 
@@ -213,13 +218,57 @@
             this.newGameBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(196)))), ((int)(((byte)(19)))));
             this.newGameBtn.FlatAppearance.BorderSize = 0;
             this.newGameBtn.Font = new System.Drawing.Font("Comic Sans MS", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.newGameBtn.Location = new System.Drawing.Point(432, 149);
+            this.newGameBtn.Location = new System.Drawing.Point(395, 190);
             this.newGameBtn.Name = "newGameBtn";
-            this.newGameBtn.Size = new System.Drawing.Size(115, 47);
+            this.newGameBtn.Size = new System.Drawing.Size(199, 47);
             this.newGameBtn.TabIndex = 2;
-            this.newGameBtn.Text = "button10";
+            this.newGameBtn.Text = "Restartuj Grę:";
             this.newGameBtn.UseVisualStyleBackColor = false;
             this.newGameBtn.Click += new System.EventHandler(this.newGame_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.DarkCyan;
+            this.panel2.Controls.Add(this.scorePlayer2);
+            this.panel2.Controls.Add(this.scorePlayer1);
+            this.panel2.Controls.Add(this.Score);
+            this.panel2.Location = new System.Drawing.Point(394, 12);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(200, 100);
+            this.panel2.TabIndex = 3;
+            // 
+            // Score
+            // 
+            this.Score.AutoSize = true;
+            this.Score.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Score.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Score.Location = new System.Drawing.Point(63, 9);
+            this.Score.Name = "Score";
+            this.Score.Size = new System.Drawing.Size(69, 28);
+            this.Score.TabIndex = 0;
+            this.Score.Text = "Wynik";
+            // 
+            // scorePlayer1
+            // 
+            this.scorePlayer1.AutoSize = true;
+            this.scorePlayer1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.scorePlayer1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.scorePlayer1.Location = new System.Drawing.Point(3, 37);
+            this.scorePlayer1.Name = "scorePlayer1";
+            this.scorePlayer1.Size = new System.Drawing.Size(103, 35);
+            this.scorePlayer1.TabIndex = 1;
+            this.scorePlayer1.Text = "Gracz1:";
+            // 
+            // scorePlayer2
+            // 
+            this.scorePlayer2.AutoSize = true;
+            this.scorePlayer2.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.scorePlayer2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.scorePlayer2.Location = new System.Drawing.Point(3, 65);
+            this.scorePlayer2.Name = "scorePlayer2";
+            this.scorePlayer2.Size = new System.Drawing.Size(114, 35);
+            this.scorePlayer2.TabIndex = 2;
+            this.scorePlayer2.Text = "Gracz2: ";
             // 
             // Form1
             // 
@@ -227,6 +276,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
             this.ClientSize = new System.Drawing.Size(606, 373);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.newGameBtn);
             this.Controls.Add(this.PlayerTurn);
             this.Controls.Add(this.panel1);
@@ -237,6 +287,8 @@
             this.Name = "Form1";
             this.Text = "Kółko i krzyżyk";
             this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -256,6 +308,10 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label PlayerTurn;
         private System.Windows.Forms.Button newGameBtn;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label Score;
+        private System.Windows.Forms.Label scorePlayer2;
+        private System.Windows.Forms.Label scorePlayer1;
     }
 }
 

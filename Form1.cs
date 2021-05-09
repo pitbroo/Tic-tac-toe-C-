@@ -59,5 +59,6 @@ namespace Kolko_i_krzyzyk
             ResetFields();
             TurnOnButtons();
         }
+
     }
 }
