@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.MultiplayerButton = new System.Windows.Forms.Button();
+            this.SInglePlayerButton = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
@@ -40,12 +42,14 @@
             this.button1 = new System.Windows.Forms.Button();
             this.PlayerTurn = new System.Windows.Forms.Label();
             this.newGameBtn = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.Score = new System.Windows.Forms.Label();
-            this.scorePlayer1 = new System.Windows.Forms.Label();
+            this.ValueTable = new System.Windows.Forms.Panel();
+            this.Player2ScoreLabel = new System.Windows.Forms.Label();
+            this.Player1ScoreLablel = new System.Windows.Forms.Label();
             this.scorePlayer2 = new System.Windows.Forms.Label();
+            this.scorePlayer1 = new System.Windows.Forms.Label();
+            this.Score = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.ValueTable.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -65,6 +69,33 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(375, 376);
             this.panel1.TabIndex = 0;
+            this.panel1.Visible = false;
+            // 
+            // MultiplayerButton
+            // 
+            this.MultiplayerButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(196)))), ((int)(((byte)(19)))));
+            this.MultiplayerButton.FlatAppearance.BorderSize = 0;
+            this.MultiplayerButton.Font = new System.Drawing.Font("Comic Sans MS", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.MultiplayerButton.Location = new System.Drawing.Point(382, 266);
+            this.MultiplayerButton.Name = "MultiplayerButton";
+            this.MultiplayerButton.Size = new System.Drawing.Size(235, 94);
+            this.MultiplayerButton.TabIndex = 12;
+            this.MultiplayerButton.Text = "Gra Dwuosobowa";
+            this.MultiplayerButton.UseVisualStyleBackColor = false;
+            this.MultiplayerButton.Click += new System.EventHandler(this.MultiplayerButton_Click);
+            // 
+            // SInglePlayerButton
+            // 
+            this.SInglePlayerButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(196)))), ((int)(((byte)(19)))));
+            this.SInglePlayerButton.FlatAppearance.BorderSize = 0;
+            this.SInglePlayerButton.Font = new System.Drawing.Font("Comic Sans MS", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.SInglePlayerButton.Location = new System.Drawing.Point(382, 166);
+            this.SInglePlayerButton.Name = "SInglePlayerButton";
+            this.SInglePlayerButton.Size = new System.Drawing.Size(235, 94);
+            this.SInglePlayerButton.TabIndex = 4;
+            this.SInglePlayerButton.Text = "Gra Jednosobowa";
+            this.SInglePlayerButton.UseVisualStyleBackColor = false;
+            this.SInglePlayerButton.Click += new System.EventHandler(this.SInglePlayerButton_Click);
             // 
             // button7
             // 
@@ -218,77 +249,103 @@
             this.newGameBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(196)))), ((int)(((byte)(19)))));
             this.newGameBtn.FlatAppearance.BorderSize = 0;
             this.newGameBtn.Font = new System.Drawing.Font("Comic Sans MS", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.newGameBtn.Location = new System.Drawing.Point(395, 190);
+            this.newGameBtn.Location = new System.Drawing.Point(395, 166);
             this.newGameBtn.Name = "newGameBtn";
             this.newGameBtn.Size = new System.Drawing.Size(199, 47);
             this.newGameBtn.TabIndex = 2;
-            this.newGameBtn.Text = "Restartuj Grę:";
+            this.newGameBtn.Text = "Nowa Gra";
             this.newGameBtn.UseVisualStyleBackColor = false;
             this.newGameBtn.Click += new System.EventHandler(this.newGame_Click);
             // 
-            // panel2
+            // ValueTable
             // 
-            this.panel2.BackColor = System.Drawing.Color.DarkCyan;
-            this.panel2.Controls.Add(this.scorePlayer2);
-            this.panel2.Controls.Add(this.scorePlayer1);
-            this.panel2.Controls.Add(this.Score);
-            this.panel2.Location = new System.Drawing.Point(394, 12);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 100);
-            this.panel2.TabIndex = 3;
+            this.ValueTable.BackColor = System.Drawing.Color.DarkCyan;
+            this.ValueTable.Controls.Add(this.Player2ScoreLabel);
+            this.ValueTable.Controls.Add(this.Player1ScoreLablel);
+            this.ValueTable.Controls.Add(this.scorePlayer2);
+            this.ValueTable.Controls.Add(this.scorePlayer1);
+            this.ValueTable.Controls.Add(this.Score);
+            this.ValueTable.Location = new System.Drawing.Point(394, 12);
+            this.ValueTable.Name = "ValueTable";
+            this.ValueTable.Size = new System.Drawing.Size(200, 100);
+            this.ValueTable.TabIndex = 3;
             // 
-            // Score
+            // Player2ScoreLabel
             // 
-            this.Score.AutoSize = true;
-            this.Score.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Score.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Score.Location = new System.Drawing.Point(63, 9);
-            this.Score.Name = "Score";
-            this.Score.Size = new System.Drawing.Size(69, 28);
-            this.Score.TabIndex = 0;
-            this.Score.Text = "Wynik";
+            this.Player2ScoreLabel.AutoSize = true;
+            this.Player2ScoreLabel.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Player2ScoreLabel.ForeColor = System.Drawing.SystemColors.Info;
+            this.Player2ScoreLabel.Location = new System.Drawing.Point(19, 65);
+            this.Player2ScoreLabel.Name = "Player2ScoreLabel";
+            this.Player2ScoreLabel.Size = new System.Drawing.Size(91, 28);
+            this.Player2ScoreLabel.TabIndex = 4;
+            this.Player2ScoreLabel.Text = "Gracz 2:";
             // 
-            // scorePlayer1
+            // Player1ScoreLablel
             // 
-            this.scorePlayer1.AutoSize = true;
-            this.scorePlayer1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.scorePlayer1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.scorePlayer1.Location = new System.Drawing.Point(3, 37);
-            this.scorePlayer1.Name = "scorePlayer1";
-            this.scorePlayer1.Size = new System.Drawing.Size(103, 35);
-            this.scorePlayer1.TabIndex = 1;
-            this.scorePlayer1.Text = "Gracz1:";
+            this.Player1ScoreLablel.AutoSize = true;
+            this.Player1ScoreLablel.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Player1ScoreLablel.ForeColor = System.Drawing.SystemColors.Info;
+            this.Player1ScoreLablel.Location = new System.Drawing.Point(19, 37);
+            this.Player1ScoreLablel.Name = "Player1ScoreLablel";
+            this.Player1ScoreLablel.Size = new System.Drawing.Size(88, 28);
+            this.Player1ScoreLablel.TabIndex = 3;
+            this.Player1ScoreLablel.Text = "Gracz 1:";
             // 
             // scorePlayer2
             // 
             this.scorePlayer2.AutoSize = true;
             this.scorePlayer2.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.scorePlayer2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.scorePlayer2.Location = new System.Drawing.Point(3, 65);
+            this.scorePlayer2.Location = new System.Drawing.Point(124, 67);
             this.scorePlayer2.Name = "scorePlayer2";
-            this.scorePlayer2.Size = new System.Drawing.Size(114, 35);
+            this.scorePlayer2.Size = new System.Drawing.Size(24, 28);
             this.scorePlayer2.TabIndex = 2;
-            this.scorePlayer2.Text = "Gracz2: ";
+            this.scorePlayer2.Text = "0";
+            // 
+            // scorePlayer1
+            // 
+            this.scorePlayer1.AutoSize = true;
+            this.scorePlayer1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.scorePlayer1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.scorePlayer1.Location = new System.Drawing.Point(124, 37);
+            this.scorePlayer1.Name = "scorePlayer1";
+            this.scorePlayer1.Size = new System.Drawing.Size(24, 28);
+            this.scorePlayer1.TabIndex = 1;
+            this.scorePlayer1.Text = "0";
+            // 
+            // Score
+            // 
+            this.Score.AutoSize = true;
+            this.Score.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Score.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Score.Location = new System.Drawing.Point(63, 0);
+            this.Score.Name = "Score";
+            this.Score.Size = new System.Drawing.Size(69, 28);
+            this.Score.TabIndex = 0;
+            this.Score.Text = "Wynik";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.ClientSize = new System.Drawing.Size(606, 373);
-            this.Controls.Add(this.panel2);
+            this.ClientSize = new System.Drawing.Size(642, 373);
+            this.Controls.Add(this.MultiplayerButton);
+            this.Controls.Add(this.ValueTable);
+            this.Controls.Add(this.SInglePlayerButton);
             this.Controls.Add(this.newGameBtn);
             this.Controls.Add(this.PlayerTurn);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.MaximumSize = new System.Drawing.Size(624, 420);
-            this.MinimumSize = new System.Drawing.Size(624, 420);
+            this.MaximumSize = new System.Drawing.Size(660, 420);
+            this.MinimumSize = new System.Drawing.Size(660, 420);
             this.Name = "Form1";
             this.Text = "Kółko i krzyżyk";
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.ValueTable.ResumeLayout(false);
+            this.ValueTable.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -308,10 +365,14 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label PlayerTurn;
         private System.Windows.Forms.Button newGameBtn;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel ValueTable;
         private System.Windows.Forms.Label Score;
         private System.Windows.Forms.Label scorePlayer2;
         private System.Windows.Forms.Label scorePlayer1;
+        private System.Windows.Forms.Label Player2ScoreLabel;
+        private System.Windows.Forms.Label Player1ScoreLablel;
+        private System.Windows.Forms.Button MultiplayerButton;
+        private System.Windows.Forms.Button SInglePlayerButton;
     }
 }
 

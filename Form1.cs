@@ -17,6 +17,8 @@ namespace Kolko_i_krzyzyk
             InitializeComponent();
         }
         bool isXorY = true;
+        int valueScorePlayer1 = 0;
+        int valueScorePlayer2 = 0;
 
         private void ClickButton(object sender, EventArgs e)
         {
@@ -27,6 +29,7 @@ namespace Kolko_i_krzyzyk
             btn.Enabled = false;
             PlayerTurn.Text = isXorY ? "Kolej gracza 2" : "Kolej gracza 1";
             isXorY ^= true;
+            checkWin();
         }
         public void ResetFields()
         {
@@ -40,6 +43,16 @@ namespace Kolko_i_krzyzyk
             button6.Text = string.Empty;
             button5.Text = string.Empty;
             button1.Text = string.Empty;
+
+            button7.BackColor = Color.SpringGreen;
+            button8.BackColor = Color.SpringGreen;
+            button9.BackColor = Color.SpringGreen;
+            button2.BackColor = Color.SpringGreen;
+            button3.BackColor = Color.SpringGreen;
+            button4.BackColor = Color.SpringGreen;
+            button6.BackColor = Color.SpringGreen;
+            button5.BackColor = Color.SpringGreen;
+            button1.BackColor = Color.SpringGreen;
         }
         public void TurnOnButtons()
         {
@@ -53,12 +66,77 @@ namespace Kolko_i_krzyzyk
             button1.Enabled = true;
             button7.Enabled = true;
         }
+        public void TurnOffButtons()
+        {
+            button8.Enabled = false;
+            button9.Enabled = false;
+            button2.Enabled = false;
+            button3.Enabled = false;
+            button4.Enabled = false;
+            button6.Enabled = false;
+            button5.Enabled = false;
+            button1.Enabled = false;
+            button7.Enabled = false;
+        }
 
         private void newGame_Click(object sender, EventArgs e)
         {
             ResetFields();
             TurnOnButtons();
+
+        }
+        public void checkWin(){
+            check3Fields(button1, button2, button3);
+            check3Fields(button4, button5, button6);
+            check3Fields(button7, button8, button9);
+            check3Fields(button1, button4, button7);
+            check3Fields(button2, button5, button8);
+            check3Fields(button3, button6, button9);
+            check3Fields(button1, button5, button9);
+            check3Fields(button3, button5, button7);
+        }
+        public Boolean check3Fields(Button button1,Button button2, Button button3)
+        {
+            if (button1.Text.Equals(button2.Text) && button2.Text.Equals(button3.Text) && !button1.Text.Equals("") && !button2.Equals("") && !button3.Equals(""))
+            {
+                button1.BackColor = Color.Red;
+                button2.BackColor = Color.Red;
+                button3.BackColor = Color.Red;
+                TurnOffButtons();
+                PlayerTurn.Text = isXorY ? "Wygrał Gracz 2" : "Wygrał Gracz 1";
+                if (isXorY)
+                {
+                    valueScorePlayer2++;
+                    scorePlayer1.Text = valueScorePlayer1.ToString();
+                    scorePlayer2.Text =  valueScorePlayer2.ToString();
+                }
+                else
+                {
+                    valueScorePlayer1++;
+                    scorePlayer1.Text = valueScorePlayer1.ToString();
+                    scorePlayer2.Text = valueScorePlayer2.ToString();
+                }
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
+        private void SInglePlayerButton_Click(object sender, EventArgs e)
+        {
+            panel1.Visible = true;
+            SInglePlayerButton.Visible = false;
+            MultiplayerButton.Visible = false;
+        }
+
+        private void MultiplayerButton_Click(object sender, EventArgs e)
+        {
+            panel1.Visible = true;
+            SInglePlayerButton.Visible = false;
+            MultiplayerButton.Visible = false;
+        }
     }
 }
+    
