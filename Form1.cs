@@ -12,13 +12,22 @@ namespace Kolko_i_krzyzyk
 {
     public partial class Form1 : Form
     {
+        List<Button> buttons = new List<Button>();
+        private readonly Random random = new Random();      
+        bool isXorY = true;
+        int valueScorePlayer1 = 0;
+        int valueScorePlayer2 = 0;
+        bool isSinglePlayer = false;
+
         public Form1()
         {
             InitializeComponent();
         }
-        bool isXorY = true;
-        int valueScorePlayer1 = 0;
-        int valueScorePlayer2 = 0;
+
+        public int RandomNumber(int min, int max)
+        {
+            return random.Next(min, max);
+        }
 
         private void ClickButton(object sender, EventArgs e)
         {
@@ -29,7 +38,15 @@ namespace Kolko_i_krzyzyk
             btn.Enabled = false;
             PlayerTurn.Text = isXorY ? "Kolej gracza 2" : "Kolej gracza 1";
             isXorY ^= true;
+
             checkWin();
+            if (isSinglePlayer && !isXorY)
+            {
+                buttons.Remove(btn);
+                Task.Delay(1500).Wait();
+                randomMove();
+            }
+            
         }
         public void ResetFields()
         {
@@ -53,6 +70,8 @@ namespace Kolko_i_krzyzyk
             button6.BackColor = Color.SpringGreen;
             button5.BackColor = Color.SpringGreen;
             button1.BackColor = Color.SpringGreen;
+
+            addButtonsToList();
         }
         public void TurnOnButtons()
         {
@@ -97,8 +116,9 @@ namespace Kolko_i_krzyzyk
         }
         public Boolean check3Fields(Button button1,Button button2, Button button3)
         {
-            if (button1.Text.Equals(button2.Text) && button2.Text.Equals(button3.Text) && !button1.Text.Equals("") && !button2.Equals("") && !button3.Equals(""))
+            if (button1.Text.Equals(button2.Text) && button2.Text.Equals(button3.Text) && !button1.Text.Equals(string.Empty) && !button2.Equals(string.Empty) && !button3.Equals(string.Empty))
             {
+                addButtonsToList();
                 button1.BackColor = Color.Red;
                 button2.BackColor = Color.Red;
                 button3.BackColor = Color.Red;
@@ -124,19 +144,49 @@ namespace Kolko_i_krzyzyk
             }
         }
 
-        private void SInglePlayerButton_Click(object sender, EventArgs e)
+        private void SinglePlayerButton_Click(object sender, EventArgs e)
         {
             panel1.Visible = true;
             SInglePlayerButton.Visible = false;
             MultiplayerButton.Visible = false;
+            isSinglePlayer = true;
+
+            addButtonsToList();
         }
 
         private void MultiplayerButton_Click(object sender, EventArgs e)
         {
             panel1.Visible = true;
             SInglePlayerButton.Visible = false;
-            MultiplayerButton.Visible = false;
+            MultiplayerButton.Visible = false;   
         }
+
+        public void randomMove()
+        {
+            int buttonIndex = RandomNumber(0, buttons.Count - 1);
+            buttons[buttonIndex].Text = "o";
+            buttons[buttonIndex].Enabled = false;
+            buttons.RemoveAt(buttonIndex);
+
+            PlayerTurn.Text = isXorY ? "Kolej gracza 2" : "Kolej gracza 1";
+            isXorY ^= true;
+            checkWin();
+        }
+
+        public void addButtonsToList()
+        {
+            buttons.Clear();
+            buttons.Add(button1);
+            buttons.Add(button2);
+            buttons.Add(button3);
+            buttons.Add(button4);
+            buttons.Add(button5);
+            buttons.Add(button6);
+            buttons.Add(button7);
+            buttons.Add(button8);
+            buttons.Add(button9);
+        }
+        
     }
 }
     

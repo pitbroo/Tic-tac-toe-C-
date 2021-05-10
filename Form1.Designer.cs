@@ -95,7 +95,7 @@
             this.SInglePlayerButton.TabIndex = 4;
             this.SInglePlayerButton.Text = "Gra Jednosobowa";
             this.SInglePlayerButton.UseVisualStyleBackColor = false;
-            this.SInglePlayerButton.Click += new System.EventHandler(this.SInglePlayerButton_Click);
+            this.SInglePlayerButton.Click += new System.EventHandler(this.SinglePlayerButton_Click);
             // 
             // button7
             // 
