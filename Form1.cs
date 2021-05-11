@@ -18,6 +18,7 @@ namespace Kolko_i_krzyzyk
         int valueScorePlayer1 = 0;
         int valueScorePlayer2 = 0;
         bool isSinglePlayer = false;
+        bool isWinner = false;
 
         public Form1()
         {
@@ -31,19 +32,19 @@ namespace Kolko_i_krzyzyk
 
         private void ClickButton(object sender, EventArgs e)
         {
-            
             Button btn = sender as Button;
             
             btn.Text = isXorY ? "x" : "o";
             btn.Enabled = false;
-            PlayerTurn.Text = isXorY ? "Kolej gracza 2" : "Kolej gracza 1";
+            PlayerTurn.Text = isXorY ? "Kolej gracza: O" : "Kolej gracza: X";
             isXorY ^= true;
 
+            buttons.Remove(btn);
             checkWin();
-            if (isSinglePlayer && !isXorY)
-            {
-                buttons.Remove(btn);
-                Task.Delay(1500).Wait();
+            
+            if (isSinglePlayer && !isXorY && !isWinner && buttons.Count > 0)
+            { 
+                Task.Delay(750).Wait();
                 randomMove();
             }
             
@@ -100,8 +101,7 @@ namespace Kolko_i_krzyzyk
 
         private void newGame_Click(object sender, EventArgs e)
         {
-            ResetFields();
-            TurnOnButtons();
+            
 
         }
         public void checkWin(){
@@ -113,8 +113,9 @@ namespace Kolko_i_krzyzyk
             check3Fields(button3, button6, button9);
             check3Fields(button1, button5, button9);
             check3Fields(button3, button5, button7);
+            Draw();          
         }
-        public Boolean check3Fields(Button button1,Button button2, Button button3)
+        public void check3Fields(Button button1,Button button2, Button button3)
         {
             if (button1.Text.Equals(button2.Text) && button2.Text.Equals(button3.Text) && !button1.Text.Equals(string.Empty) && !button2.Equals(string.Empty) && !button3.Equals(string.Empty))
             {
@@ -123,24 +124,27 @@ namespace Kolko_i_krzyzyk
                 button2.BackColor = Color.Red;
                 button3.BackColor = Color.Red;
                 TurnOffButtons();
-                PlayerTurn.Text = isXorY ? "Wygrał Gracz 2" : "Wygrał Gracz 1";
+
+                string winner = isXorY ? "Wygrał Gracz: O!" : "Wygrał Gracz: X!";
+                MessageBox.Show(winner);
                 if (isXorY)
                 {
                     valueScorePlayer2++;
                     scorePlayer1.Text = valueScorePlayer1.ToString();
                     scorePlayer2.Text =  valueScorePlayer2.ToString();
+                    isWinner = true;              
                 }
                 else
                 {
                     valueScorePlayer1++;
                     scorePlayer1.Text = valueScorePlayer1.ToString();
                     scorePlayer2.Text = valueScorePlayer2.ToString();
+                    isWinner = true;        
                 }
-                return true;
-            }
-            else
-            {
-                return false;
+                if (isSinglePlayer)
+                {
+                    PlayerTurn.Text = "Kolej gracza: X";
+                }
             }
         }
 
@@ -158,19 +162,22 @@ namespace Kolko_i_krzyzyk
         {
             panel1.Visible = true;
             SInglePlayerButton.Visible = false;
-            MultiplayerButton.Visible = false;   
+            MultiplayerButton.Visible = false;
+
+            addButtonsToList();
         }
 
         public void randomMove()
         {
-            int buttonIndex = RandomNumber(0, buttons.Count - 1);
-            buttons[buttonIndex].Text = "o";
-            buttons[buttonIndex].Enabled = false;
-            buttons.RemoveAt(buttonIndex);
+                int buttonIndex = RandomNumber(0, buttons.Count);
+                buttons[buttonIndex].Text = "o";
+                buttons[buttonIndex].Enabled = false;
+                buttons.RemoveAt(buttonIndex);
 
-            PlayerTurn.Text = isXorY ? "Kolej gracza 2" : "Kolej gracza 1";
-            isXorY ^= true;
-            checkWin();
+                PlayerTurn.Text = isXorY ? "Kolej gracza: O" : "Kolej gracza: X";
+                isXorY ^= true;
+               
+                checkWin();          
         }
 
         public void addButtonsToList()
@@ -186,7 +193,27 @@ namespace Kolko_i_krzyzyk
             buttons.Add(button8);
             buttons.Add(button9);
         }
-        
+
+        private void newTurn_Click(object sender, EventArgs e)
+        {
+            if (isSinglePlayer){ isXorY = true; }
+            
+            addButtonsToList();
+            ResetFields();
+            TurnOnButtons();
+            isWinner = false;
+
+        }
+        public void Draw()
+        {
+            if (buttons.Count.Equals(0) && !isWinner) { 
+                MessageBox.Show("Remis!");
+            }
+            if (isSinglePlayer && buttons.Count.Equals(0))
+            {
+                PlayerTurn.Text = "Kolej gracza: X";
+            }
+        }
     }
 }
     
