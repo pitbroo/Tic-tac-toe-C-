@@ -49,6 +49,7 @@
             this.scorePlayer2 = new System.Windows.Forms.Label();
             this.scorePlayer1 = new System.Windows.Forms.Label();
             this.Score = new System.Windows.Forms.Label();
+            this.button10 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.ValueTable.SuspendLayout();
             this.SuspendLayout();
@@ -212,7 +213,7 @@
             this.MultiplayerButton.FlatAppearance.BorderSize = 0;
             this.MultiplayerButton.Font = new System.Drawing.Font("Comic Sans MS", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.MultiplayerButton.Location = new System.Drawing.Point(286, 97);
-            this.MultiplayerButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MultiplayerButton.Margin = new System.Windows.Forms.Padding(2);
             this.MultiplayerButton.Name = "MultiplayerButton";
             this.MultiplayerButton.Size = new System.Drawing.Size(176, 76);
             this.MultiplayerButton.TabIndex = 12;
@@ -226,7 +227,7 @@
             this.SInglePlayerButton.FlatAppearance.BorderSize = 0;
             this.SInglePlayerButton.Font = new System.Drawing.Font("Comic Sans MS", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.SInglePlayerButton.Location = new System.Drawing.Point(286, 177);
-            this.SInglePlayerButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.SInglePlayerButton.Margin = new System.Windows.Forms.Padding(2);
             this.SInglePlayerButton.Name = "SInglePlayerButton";
             this.SInglePlayerButton.Size = new System.Drawing.Size(176, 76);
             this.SInglePlayerButton.TabIndex = 4;
@@ -253,7 +254,7 @@
             this.newTurnBtn.FlatAppearance.BorderSize = 0;
             this.newTurnBtn.Font = new System.Drawing.Font("Comic Sans MS", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.newTurnBtn.Location = new System.Drawing.Point(303, 135);
-            this.newTurnBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.newTurnBtn.Margin = new System.Windows.Forms.Padding(2);
             this.newTurnBtn.Name = "newTurnBtn";
             this.newTurnBtn.Size = new System.Drawing.Size(149, 38);
             this.newTurnBtn.TabIndex = 2;
@@ -269,8 +270,8 @@
             this.ValueTable.Controls.Add(this.scorePlayer2);
             this.ValueTable.Controls.Add(this.scorePlayer1);
             this.ValueTable.Controls.Add(this.Score);
-            this.ValueTable.Location = new System.Drawing.Point(296, 10);
-            this.ValueTable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ValueTable.Location = new System.Drawing.Point(300, 11);
+            this.ValueTable.Margin = new System.Windows.Forms.Padding(2);
             this.ValueTable.Name = "ValueTable";
             this.ValueTable.Size = new System.Drawing.Size(150, 81);
             this.ValueTable.TabIndex = 3;
@@ -328,12 +329,26 @@
             this.Score.AutoSize = true;
             this.Score.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Score.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Score.Location = new System.Drawing.Point(47, 0);
+            this.Score.Location = new System.Drawing.Point(47, 1);
             this.Score.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Score.Name = "Score";
             this.Score.Size = new System.Drawing.Size(58, 23);
             this.Score.TabIndex = 0;
             this.Score.Text = "Wynik";
+            // 
+            // button10
+            // 
+            this.button10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(196)))), ((int)(((byte)(19)))));
+            this.button10.FlatAppearance.BorderSize = 0;
+            this.button10.Font = new System.Drawing.Font("Comic Sans MS", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button10.Location = new System.Drawing.Point(303, 261);
+            this.button10.Margin = new System.Windows.Forms.Padding(2);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(149, 38);
+            this.button10.TabIndex = 13;
+            this.button10.Text = "Nowa Gra";
+            this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.newGame_Click);
             // 
             // Form1
             // 
@@ -341,6 +356,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
             this.ClientSize = new System.Drawing.Size(483, 310);
+            this.Controls.Add(this.button10);
             this.Controls.Add(this.MultiplayerButton);
             this.Controls.Add(this.ValueTable);
             this.Controls.Add(this.SInglePlayerButton);
@@ -383,6 +399,7 @@
         private System.Windows.Forms.Label Player1ScoreLablel;
         private System.Windows.Forms.Button MultiplayerButton;
         private System.Windows.Forms.Button SInglePlayerButton;
+        private System.Windows.Forms.Button button10;
     }
 }
 

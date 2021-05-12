@@ -101,7 +101,21 @@ namespace Kolko_i_krzyzyk
 
         private void newGame_Click(object sender, EventArgs e)
         {
-            
+            isXorY = true;
+            valueScorePlayer1 = 0;
+            valueScorePlayer2 = 0;
+            scorePlayer1.Text = valueScorePlayer1.ToString();
+            scorePlayer2.Text = valueScorePlayer2.ToString();
+            isSinglePlayer = false;
+            isWinner = false;
+            ValueTable.Refresh();
+
+            panel1.Visible = false;
+            SInglePlayerButton.Visible = true;
+            MultiplayerButton.Visible = true;
+            newTurnBtn.Visible = false;
+
+            //Application.Restart();
 
         }
         public void checkWin(){
@@ -154,6 +168,7 @@ namespace Kolko_i_krzyzyk
             SInglePlayerButton.Visible = false;
             MultiplayerButton.Visible = false;
             isSinglePlayer = true;
+            newTurnBtn.Visible = true;
 
             addButtonsToList();
         }
@@ -163,6 +178,7 @@ namespace Kolko_i_krzyzyk
             panel1.Visible = true;
             SInglePlayerButton.Visible = false;
             MultiplayerButton.Visible = false;
+            newTurnBtn.Visible = true;
 
             addButtonsToList();
         }
