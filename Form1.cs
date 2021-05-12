@@ -115,7 +115,11 @@ namespace Kolko_i_krzyzyk
             MultiplayerButton.Visible = true;
             newTurnBtn.Visible = false;
 
-            //Application.Restart();
+            PlayerTurn.Text = "Kolej gracza: X";
+
+            addButtonsToList();
+            ResetFields();
+            TurnOnButtons();
 
         }
         public void checkWin(){
