@@ -168,7 +168,10 @@ namespace Kolko_i_krzyzyk
                 }
                 if (isSinglePlayer)
                 {
-                    textBox1.Text += "HaHa wygrałem!";
+                    if (isXorY)
+                    {
+                        textBox1.Text += "HaHa wygrałem!";
+                    }
                     PlayerTurn.Text = "Kolej gracza: X";
                 }
             }
