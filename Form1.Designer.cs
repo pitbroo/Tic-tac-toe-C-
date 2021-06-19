@@ -50,6 +50,7 @@
             this.scorePlayer1 = new System.Windows.Forms.Label();
             this.Score = new System.Windows.Forms.Label();
             this.button10 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.ValueTable.SuspendLayout();
             this.SuspendLayout();
@@ -350,12 +351,26 @@
             this.button10.UseVisualStyleBackColor = false;
             this.button10.Click += new System.EventHandler(this.newGame_Click);
             // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.DarkCyan;
+            this.textBox1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBox1.ForeColor = System.Drawing.SystemColors.Window;
+            this.textBox1.Location = new System.Drawing.Point(482, 0);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(102, 310);
+            this.textBox1.TabIndex = 14;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.ClientSize = new System.Drawing.Size(483, 310);
+            this.ClientSize = new System.Drawing.Size(584, 310);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button10);
             this.Controls.Add(this.MultiplayerButton);
             this.Controls.Add(this.ValueTable);
@@ -365,7 +380,7 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximumSize = new System.Drawing.Size(499, 349);
+            this.MaximumSize = new System.Drawing.Size(600, 349);
             this.MinimumSize = new System.Drawing.Size(499, 349);
             this.Name = "Form1";
             this.Text = "Kółko i krzyżyk";
@@ -400,6 +415,7 @@
         private System.Windows.Forms.Button MultiplayerButton;
         private System.Windows.Forms.Button SInglePlayerButton;
         private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 

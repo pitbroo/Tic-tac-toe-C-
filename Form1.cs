@@ -44,9 +44,13 @@ namespace Kolko_i_krzyzyk
             
             if (isSinglePlayer && !isXorY && !isWinner && buttons.Count > 0)
             { 
-                Task.Delay(750).Wait();
+                
+                infoFromComputer();
+                Task.Delay(1500).Wait();
                 randomMove();
             }
+
+            
             
         }
         public void ResetFields()
@@ -71,6 +75,8 @@ namespace Kolko_i_krzyzyk
             button6.BackColor = Color.SpringGreen;
             button5.BackColor = Color.SpringGreen;
             button1.BackColor = Color.SpringGreen;
+
+            textBox1.Clear();
 
             addButtonsToList();
         }
@@ -116,6 +122,7 @@ namespace Kolko_i_krzyzyk
             newTurnBtn.Visible = false;
 
             PlayerTurn.Text = "Kolej gracza: X";
+            textBox1.Clear();
 
             addButtonsToList();
             ResetFields();
@@ -161,6 +168,7 @@ namespace Kolko_i_krzyzyk
                 }
                 if (isSinglePlayer)
                 {
+                    textBox1.Text += "HaHa wygrałem!";
                     PlayerTurn.Text = "Kolej gracza: X";
                 }
             }
@@ -232,6 +240,15 @@ namespace Kolko_i_krzyzyk
             if (isSinglePlayer && buttons.Count.Equals(0))
             {
                 PlayerTurn.Text = "Kolej gracza: X";
+            }
+        }
+        public void infoFromComputer()
+        {
+          
+            if (isSinglePlayer)
+            {
+                string info = InfoFromComputer.getRandomInfo();
+                textBox1.Text += info;
             }
         }
     }
