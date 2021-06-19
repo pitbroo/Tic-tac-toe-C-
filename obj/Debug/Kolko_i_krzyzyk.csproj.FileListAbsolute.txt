@@ -11,7 +11,6 @@ D:\Program Files\projekty java i c#\Kolko_i_krzyzyk\Kolko_i_krzyzyk\obj\Debug\Ko
 D:\Studia\Semestr 6\C#\Kółko i krzyżyk\Tic-tac-toe-C-\bin\Debug\Kolko_i_krzyzyk.exe.config
 D:\Studia\Semestr 6\C#\Kółko i krzyżyk\Tic-tac-toe-C-\bin\Debug\Kolko_i_krzyzyk.exe
 D:\Studia\Semestr 6\C#\Kółko i krzyżyk\Tic-tac-toe-C-\bin\Debug\Kolko_i_krzyzyk.pdb
-D:\Studia\Semestr 6\C#\Kółko i krzyżyk\Tic-tac-toe-C-\obj\Debug\Kolko_i_krzyzyk.csprojAssemblyReference.cache
 D:\Studia\Semestr 6\C#\Kółko i krzyżyk\Tic-tac-toe-C-\obj\Debug\Kolko_i_krzyzyk.Form1.resources
 D:\Studia\Semestr 6\C#\Kółko i krzyżyk\Tic-tac-toe-C-\obj\Debug\Kolko_i_krzyzyk.Properties.Resources.resources
 D:\Studia\Semestr 6\C#\Kółko i krzyżyk\Tic-tac-toe-C-\obj\Debug\Kolko_i_krzyzyk.csproj.GenerateResource.cache
